@@ -1,11 +1,11 @@
   applications:
-  - name: djangoapp
+  - name: gregoriobonaldi-djangoapp
     routes:
-      - route: $HOST.$DOMAIN
+      - route: gregoriobonaldi-djangoapp.eu-de.mybluemix.net
     memory: 128M
     buildpack: python_buildpack
-  - name: djangoapp-nginx
+  - name: gregoriobonaldi-djangoapp-nginx
     routes:
-      - route: $HOST.$DOMAIN/static
+      - route: gregoriobonaldi-djangoapp.eu-de.mybluemix.net/static
     memory: 128M
     buildpack: staticfile_buildpack
