@@ -94,7 +94,7 @@ def get_dealer_reviews_from_cf(url, dealer_id, **kwargs):
             # Create a CarDealer object with values in `doc` object
             review_obj = DealerReview(dealership=review_doc["dealership"], name=review_doc["name"], purchase=review_doc["purchase"],
                                    review=review_doc["review"], purchase_date=review_doc["purchase_date"], car_make=review_doc["car_make"],
-                                   car_model=review_doc["car_model"], id=review_doc["id"],
+                                   car_model=review_doc["car_model"],
                                    car_year=review_doc["car_year"], sentiment="")
             review_obj.sentiment = analyze_review_sentiments(review_obj.review)
             results.append(review_obj)
@@ -112,7 +112,7 @@ def get_dealer_reviews_from_cf(url, dealer_id, **kwargs):
 # - Call get_request() with specified arguments
 # - Get the returned sentiment label such as Positive or Negative
 def analyze_review_sentiments(dealerreview, **kwargs):
-    result = "none"
+    result = "neutral"
     url = "https://api.eu-de.natural-language-understanding.watson.cloud.ibm.com/instances/f42343c5-3f70-454a-9a2b-6ead0f940f97/v1/analyze?version=2022-04-07"
     api_key = "APsv-CcpXts1im86oIRuPMSJR-ttQIBAwbYI-Hnka98m"
     params = dict()
